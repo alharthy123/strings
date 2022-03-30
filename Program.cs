@@ -19,7 +19,8 @@ namespace strings
                 int auswahl;
                 Console.WriteLine("1:zelchen ersetzen.");
                 Console.WriteLine("2:Vokale entfernen.");
-                Console.WriteLine("3:Beenden");
+                Console.WriteLine("3:Quersumme bilden.");
+                Console.WriteLine("3:Beenden.");
 
                 Console.WriteLine("Aaswahl:");
                 auswahl=Convert.ToInt32(Console.ReadLine());
@@ -27,7 +28,7 @@ namespace strings
                 switch(auswahl)
                 {
                     case 1:
-                Console.WriteLine("1:zelchen ersetzen.");
+                        Console.WriteLine("1:zelchen ersetzen.");
                         String zuErsetzen, zeichnen, ersatz;
                         Console.WriteLine("Zeichenkette eingeben:");
                         zuErsetzen = Console.ReadLine();
@@ -58,19 +59,38 @@ namespace strings
                         String zeichenkette;
                         Console.WriteLine("zeichenkette eingeben:");
                         zeichenkette = Console.ReadLine();
-                        String ergebnis = "";
+                        String zeichenketteAlt ="";
+                        String vokale = "aieouAIEOU";
+                        string ersetzt2 = "";
 
-                        ergebnis = zeichenkette.Replace("a", "");
-                        Console.WriteLine(zeichenkette + "wird zu" + ergebnis);
+                         for(int i =0;i < vokale.Length; i ++)
+                         {
+                            // zeichenkette = zeichenkette.Replace(vokale[i].ToString(),"");
+                            for (int j = 0; i < vokale.Length;i++)
+                            { 
+                                
+                                if (zeichenkette[j]==vokale[i])
+                                {
+                                ersetzt2 += "";
+                                }
+                                else
+                                {
+                                ersetzt2 += zeichenkette[i];
+                                }
 
+                            }
+                          
+                         }
+
+                        Console.WriteLine(zeichenkette + "wird zu" + zeichenkette);
                         break;
                     case 3:
-                        Console.WriteLine("3:programm wird beendet.");
+                        Console.WriteLine("Die Qursumme einer ganzer zahl soll berechnet werden.");
 
 
 
 
-                     break;
+                       break;
 
                     default:
                         Console.WriteLine("Auswahl ungültig,");
